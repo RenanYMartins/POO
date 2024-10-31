@@ -35,6 +35,29 @@ public class CadastroPessoaX {
         Pessoa xp = listaPessoas.get(0);
         System.out.println(xp.getNome());
         
+        boolean contemObjeto = listaPessoas.contains(p2);
+        
+        // DAO = Data Access Object
+        //======================================
+        DAOPessoa daoPessoa = new DAOPessoa();
+        daoPessoa.create(new Pessoa(1, "111", "Joao"));
+        daoPessoa.create(new Pessoa(2, "222", "Maria"));
+        daoPessoa.create(new Pessoa(3, "333", "Jose"));
+        
+        System.out.println(daoPessoa.listAll());
+        
+        // exclusao
+        Pessoa pessoaSD = daoPessoa.read(1);
+        if(daoPessoa.delete(pessoaSD))
+            System.out.println("Exclusao com sucesso");
+        else
+            System.out.println("Exclusao falhou");
+        
+        // update
+        Pessoa pessoaUp = new Pessoa(2, "444", "Maria Jose");
+        daoPessoa.update(pessoaUp);
+        
+        System.out.println(daoPessoa.listAll());
     }
     
 }
