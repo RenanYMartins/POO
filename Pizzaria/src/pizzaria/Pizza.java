@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pizzaria;
 
 public class Pizza {
+    private static int idInicial = 1;
     private int id;
     private String sabor;
     private double valor;
 
-    public Pizza(int id, String sabor, double valor) {;
-        this.id = id;
+    public Pizza(String sabor, double valor) {;
+        this.id = idInicial++;
         this.sabor = sabor;
         this.valor = valor;
     }
