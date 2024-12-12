@@ -36,7 +36,7 @@ public class Puzzle {
         }
 
         board[row][col] = piece;
-        return true;
+        return true; 
     }
 
     public void displayBoard() {
