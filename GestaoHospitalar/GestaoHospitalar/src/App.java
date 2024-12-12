@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-import Models.Atendimento;
 import Models.Medico;
 import Models.Paciente;
 import Repository.GerenciaAtendimento;
@@ -14,7 +13,6 @@ public class App {
 
         Medico[] medicos = new Medico[100];
         Paciente[] pacientes = new Paciente[100];
-        // Atendimento[] atendimentos = new Atendimento[100];
 
         GerenciaMedicos gerenciaMedicos = new GerenciaMedicos(medicos);
         GerenciaPacientes gerenciaPacientes = new GerenciaPacientes(pacientes);
@@ -30,7 +28,6 @@ public class App {
             System.out.println("4 - Sair");
             System.out.print("Opção: ");
             opcao = scanner.nextInt();
-            System.out.println("Opção selecionada no menu: " + opcao);
 
             switch (opcao) {
                 case 1:
@@ -43,6 +40,8 @@ public class App {
                     menuAtendimento(scanner, gerenciaAtendimento, gerenciaMedicos, gerenciaPacientes, pacientes,
                             medicos);
                     break;
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         } while (opcao != 3);
 
@@ -82,6 +81,8 @@ public class App {
                     break;
                 case 5:
                     gm.relatorio();
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         } while (opcao != 6);
     }
@@ -108,6 +109,8 @@ public class App {
                     break;
                 case 5:
                     gp.relatorio();
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         } while (opcao != 6);
     }

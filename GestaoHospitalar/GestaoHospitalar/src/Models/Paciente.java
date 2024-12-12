@@ -1,13 +1,13 @@
 package Models;
+
 public class Paciente extends Pessoa {
     private String nomeConvenio;
     private String numeroConvenio;
-    
-    public Paciente(String nome, String cpf, 
-            String nomeConv, String numConv){
+
+    public Paciente(String nome, String cpf, String nomeConv, String numConv) {
         super(nome, cpf);
-        nomeConvenio = nomeConv;
-        numeroConvenio = numConv;
+        this.nomeConvenio = nomeConv;
+        this.numeroConvenio = numConv;
     }
 
     public String getNomeConvenio() {
@@ -27,7 +27,7 @@ public class Paciente extends Pessoa {
     }
 
     @Override
-    public void imprimir(){
+    public void imprimir() {
         super.imprimir();
         System.out.println("Nome Convênio  : " + nomeConvenio);
         System.out.println("Número Convênio: " + numeroConvenio);
